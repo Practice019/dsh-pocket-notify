@@ -22,8 +22,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build:client": "node client/build.mjs",
-    "test": "node --test --test-timeout=30000 \"test/*.test.js\""
+    "build:client": "node client/build.mjs"
   },
   "dependencies": {
     "@larksuiteoapi/node-sdk": "^1.73.0",
