@@ -1,0 +1,81 @@
+{
+  "name": "dsh-pocket",
+  "description": "dsh-pocket 的 fork：在「手机扫码访问 DSH」之上加了消息推送（飞书扫码建应用 / IM 群机器人 Webhook），任务完成、出错、待审批、待回答时推到手机。Fork of dsh-pocket with push notifications.",
+  "type": "module",
+  "main": "lib/index.js",
+  "bin": {
+    "dsh-pocket": "bin/dsh-pocket.mjs"
+  },
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": "./client/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "client",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build:client": "node client/build.mjs",
+    "test": "node --test --test-timeout=30000 \"test/*.test.js\""
+  },
+  "dependencies": {
+    "@larksuiteoapi/node-sdk": "^1.73.0",
+    "qrcode": "^1.5.4",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.9",
+    "ws": "^8.18.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "GPL-2.0",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "mobile",
+    "remote",
+    "qr",
+    "tunnel",
+    "notification",
+    "feishu",
+    "lark",
+    "webhook"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-session-log-export"
+      ],
+      "platform": "web"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Practice019/dsh-pocket-notify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Practice019/dsh-pocket-notify/issues"
+  },
+  "homepage": "https://github.com/Practice019/dsh-pocket-notify",
+  "version": "2.11.0"
+}

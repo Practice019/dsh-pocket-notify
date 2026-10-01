@@ -1,0 +1,14 @@
+# 统一用 LF：上游 dsh-pocket 全部文件都是 LF，
+# 若被 git 转成 CRLF，与上游对比会产生满屏虚假差异，
+# 且 client.js 等生成物容易在打包/补丁环节出问题。
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary

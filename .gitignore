@@ -1,0 +1,10 @@
+node_modules/
+*.log
+.DS_Store
+.env
+.env.*
+*.local
+
+# 本地测试残留
+test/local/tmp/
+coverage/
